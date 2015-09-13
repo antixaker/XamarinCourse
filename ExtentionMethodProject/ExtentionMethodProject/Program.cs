@@ -16,7 +16,7 @@ namespace ExtentionMethodProject
 
             int result = Console.ReadLine().WordCount();// call extention method
 
-            Console.WriteLine("Sentence has {0} words :)",result);
+            Console.WriteLine("Sentence has {0} words :)", result);
             Console.ReadKey();
         }
     }

@@ -10,7 +10,7 @@ namespace ExtentionLibrary
     {
         public static int WordCount(this String str)
         {
-            return str.Split(new char[] { ' ','.',',','!','?','-' },StringSplitOptions.RemoveEmptyEntries).Count();
+            return str.Split(new char[] { ' ', '.', ',', '!', '?', '-' }, StringSplitOptions.RemoveEmptyEntries).Count();
         }
     }
 }
