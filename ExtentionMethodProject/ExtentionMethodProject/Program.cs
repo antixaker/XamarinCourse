@@ -13,8 +13,10 @@ namespace ExtentionMethodProject
         static void Main(string[] args)
         {
             Console.WriteLine("Enter your sentence:");
-            int result = Console.ReadLine().WordCount();
-            Console.WriteLine("Sentece has {0} words :)",result);
+
+            int result = Console.ReadLine().WordCount();// call extention method
+
+            Console.WriteLine("Sentence has {0} words :)",result);
             Console.ReadKey();
         }
     }
