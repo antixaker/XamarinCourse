@@ -17,6 +17,17 @@
                  Spacing="30">
       <Entry></Entry>
       <Button></Button>
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition></ColumnDefinition>
+          <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition></RowDefinition>
+          <RowDefinition></RowDefinition>
+          <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+      </Grid>
       <Label x:Name="PercentLabel" Text="Tip Percentage" TextColor="Black" FontSize="20"></Label>
       <Label x:Name="TipAmountLabel" Text="Tip Amount" TextColor="Black" FontSize="20"></Label>
       <Label x:Name="TotalAmountLabel" Text="Total Amount" TextColor="Lime" FontSize="20"></Label>
