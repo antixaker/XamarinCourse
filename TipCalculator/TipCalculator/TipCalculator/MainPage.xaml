@@ -14,12 +14,18 @@
     <StackLayout HorizontalOptions="FillAndExpand" Spacing="15">
       <Entry x:Name="AmountEntry" HorizontalOptions="Center" WidthRequest="200" BackgroundColor="White" Keyboard="Numeric" Placeholder="Enter amount" TextColor="Black" HeightRequest="30"></Entry>
       <Button x:Name="CalcButton" HorizontalOptions="Center" Text="Calculate Tip" BackgroundColor="Gray" WidthRequest="150"></Button>
-      <Label x:Name="PercentLabel" Text="Tip Percentage" TextColor="Black" FontSize="20"></Label>
-      <Label x:Name="TipAmountLabel" Text="Tip Amount" TextColor="Black" FontSize="20"></Label>
-      <Label x:Name="TotalAmountLabel" Text="Total Amount" TextColor="Lime" FontSize="20"></Label>
-      <Label x:Name="PercentValue" Text="17%" TextColor="Black" FontSize="20"></Label>
-      <Label x:Name="TipAmountValue" Text="$5" TextColor="Black" FontSize="20"></Label>
-      <Label x:Name="TotalAmountValue" Text="$15" TextColor="Lime" FontSize="20"></Label>
+      <Grid HorizontalOptions="Center">
+        <Grid.RowDefinitions>
+          <RowDefinition></RowDefinition>
+          <RowDefinition></RowDefinition>
+          <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="3*"></ColumnDefinition>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+      </Grid>
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>
