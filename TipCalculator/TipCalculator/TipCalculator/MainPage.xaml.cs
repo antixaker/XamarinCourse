@@ -20,7 +20,8 @@ namespace TipCalculator
         {
             string enteredAmount = AmountEntry.Text;
             if (string.IsNullOrEmpty(enteredAmount))
-                this.DisplayAlert("Input error!", "Wrong input string format", "Cancel");
+                this.DisplayAlert("Empty value error", "Input value must be filled", "Back");
+
         }
     }
 }
