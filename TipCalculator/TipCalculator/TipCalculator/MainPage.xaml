@@ -12,12 +12,12 @@
   </ContentPage.Padding>
   <ContentPage.Content>
     <StackLayout>
-      <Entry></Entry>
+      <Entry HorizontalOptions="Center" WidthRequest="200" BackgroundColor="White" Keyboard="Telephone" Placeholder="Enter amount" TextColor="Black" HeightRequest="30"></Entry>
       <Button></Button>
       <Label x:Name="PercentLabel" Text="Tip Percentage" TextColor="Black" FontSize="20"></Label>
       <Label x:Name="TipAmountLabel" Text="Tip Amount" TextColor="Black" FontSize="20"></Label>
       <Label x:Name="TotalAmountLabel" Text="Total Amount" TextColor="Lime" FontSize="20"></Label>
-      <Label x:Name="PercentValue" Text="10%" TextColor="Black" FontSize="20"></Label>
+      <Label x:Name="PercentValue" Text="17%" TextColor="Black" FontSize="20"></Label>
       <Label x:Name="TipAmountValue" Text="$5" TextColor="Black" FontSize="20"></Label>
       <Label x:Name="TotalAmountValue" Text="$15" TextColor="Lime" FontSize="20"></Label>
     </StackLayout>
