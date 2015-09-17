@@ -13,7 +13,7 @@
   <ContentPage.Content>
     <StackLayout HorizontalOptions="FillAndExpand">
       <Entry x:Name="AmountEntry" HorizontalOptions="Center" WidthRequest="200" BackgroundColor="White" Keyboard="Telephone" Placeholder="Enter amount" TextColor="Black" HeightRequest="30"></Entry>
-      <Button></Button>
+      <Button x:Name="CalcButton" HorizontalOptions="Center" Text="Calculate Tip" BackgroundColor="Gray" WidthRequest="150"></Button>
       <Label x:Name="PercentLabel" Text="Tip Percentage" TextColor="Black" FontSize="20"></Label>
       <Label x:Name="TipAmountLabel" Text="Tip Amount" TextColor="Black" FontSize="20"></Label>
       <Label x:Name="TotalAmountLabel" Text="Total Amount" TextColor="Lime" FontSize="20"></Label>
