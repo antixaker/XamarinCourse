@@ -12,7 +12,6 @@
   </ContentPage.Padding>
   <ContentPage.Content>
     <StackLayout VerticalOptions="FillAndExpand"
-                 HorizontalOptions="FillAndExpand"
                  Orientation="Vertical"
                  Spacing="20">
       <Entry></Entry>
@@ -31,9 +30,9 @@
       <Label Grid.Column="0" Grid.Row="0" x:Name="PercentLabel" Text="Tip Percentage" TextColor="Black" FontSize="20"></Label>
       <Label Grid.Column="0" Grid.Row="1" x:Name="TipAmountLabel" Text="Tip Amount" TextColor="Black" FontSize="20"></Label>
       <Label Grid.Column="0" Grid.Row="2" x:Name="TotalAmountLabel" Text="Total Amount" TextColor="Lime" FontSize="20"></Label>
-      <Label></Label>
-      <Label></Label>
-      <Label></Label>
+      <Label Grid.Column="1" Grid.Row="0" x:Name="PercentValue" Text="10%" TextColor="Black" FontSize="20"></Label>
+      <Label Grid.Column="1" Grid.Row="1" x:Name="TipAmountValue" Text="$5" TextColor="Black" FontSize="20"></Label>
+      <Label Grid.Column="1" Grid.Row="2" x:Name="TotalAmountValue" Text="$15" TextColor="Lime" FontSize="20"></Label>
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>
