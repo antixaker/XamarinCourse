@@ -10,10 +10,13 @@ namespace TipCalculator
 {
     public partial class MainPage : ContentPage
     {
+        int tipPercentValue = 17;
+
         public MainPage()
         {
             InitializeComponent();
             CalcButton.Clicked += CalcButton_Clicked;
+            PercentValue.Text = string.Format("$ {0}", tipPercentValue);
         }
 
         private void CalcButton_Clicked(object sender, EventArgs e)
