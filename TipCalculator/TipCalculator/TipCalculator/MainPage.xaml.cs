@@ -22,6 +22,13 @@ namespace TipCalculator
             if (string.IsNullOrEmpty(enteredAmount))
                 this.DisplayAlert("Empty value error", "Input value must be filled", "Back");
 
+            double amount = 0;
+            if (double.TryParse(enteredAmount, out amount))
+            {
+
+            }
+            else
+                this.DisplayAlert("Number value error", "Number value has wrong format", "Back");
         }
     }
 }
