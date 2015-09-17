@@ -25,9 +25,9 @@
           <ColumnDefinition Width="*"></ColumnDefinition>
           <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label Grid.Column="0" Grid.Row="0" x:Name="PercentLabel" Text="Tip Percentage" TextColor="Black" FontSize="20"></Label>
-        <Label Grid.Column="0" Grid.Row="1" x:Name="TipAmountLabel" Text="Tip Amount" TextColor="Black" FontSize="20"></Label>
-        <Label Grid.Column="0" Grid.Row="2" x:Name="TotalAmountLabel" Text="Total Amount" TextColor="Lime" FontSize="20"></Label>
+        <Label Grid.Column="0" Grid.Row="0" Text="Tip Percentage" TextColor="Black" FontSize="20"></Label>
+        <Label Grid.Column="0" Grid.Row="1" Text="Tip Amount" TextColor="Black" FontSize="20"></Label>
+        <Label Grid.Column="0" Grid.Row="2" Text="Total Amount" TextColor="Lime" FontSize="20"></Label>
         <Label Grid.Column="2" Grid.Row="0" x:Name="PercentValue" Text="17%" TextColor="Black" FontSize="20" HorizontalOptions="End"></Label>
         <Label Grid.Column="2" Grid.Row="1" x:Name="TipAmountValue" Text="$ 0.0" TextColor="Black" FontSize="20" HorizontalOptions="End"></Label>
         <Label Grid.Column="2" Grid.Row="2" x:Name="TotalAmountValue" Text="$ 0.0" TextColor="Lime" FontSize="20" HorizontalOptions="End"></Label>
