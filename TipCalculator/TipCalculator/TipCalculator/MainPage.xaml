@@ -11,28 +11,15 @@
                 WinPhone="20, 20, 20, 20" />
   </ContentPage.Padding>
   <ContentPage.Content>
-    <StackLayout VerticalOptions="FillAndExpand"
-                 Orientation="Vertical"
-                 Spacing="20">
+    <StackLayout>
       <Entry></Entry>
       <Button></Button>
-      <Grid>
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition></ColumnDefinition>
-          <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-          <RowDefinition></RowDefinition>
-          <RowDefinition></RowDefinition>
-          <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-      </Grid>
-      <Label Grid.Column="0" Grid.Row="0" x:Name="PercentLabel" Text="Tip Percentage" TextColor="Black" FontSize="20"></Label>
-      <Label Grid.Column="0" Grid.Row="1" x:Name="TipAmountLabel" Text="Tip Amount" TextColor="Black" FontSize="20"></Label>
-      <Label Grid.Column="0" Grid.Row="2" x:Name="TotalAmountLabel" Text="Total Amount" TextColor="Lime" FontSize="20"></Label>
-      <Label Grid.Column="1" Grid.Row="0" x:Name="PercentValue" Text="10%" TextColor="Black" FontSize="20"></Label>
-      <Label Grid.Column="1" Grid.Row="1" x:Name="TipAmountValue" Text="$5" TextColor="Black" FontSize="20"></Label>
-      <Label Grid.Column="1" Grid.Row="2" x:Name="TotalAmountValue" Text="$15" TextColor="Lime" FontSize="20"></Label>
+      <Label x:Name="PercentLabel" Text="Tip Percentage" TextColor="Black" FontSize="20"></Label>
+      <Label x:Name="TipAmountLabel" Text="Tip Amount" TextColor="Black" FontSize="20"></Label>
+      <Label x:Name="TotalAmountLabel" Text="Total Amount" TextColor="Lime" FontSize="20"></Label>
+      <Label x:Name="PercentValue" Text="10%" TextColor="Black" FontSize="20"></Label>
+      <Label x:Name="TipAmountValue" Text="$5" TextColor="Black" FontSize="20"></Label>
+      <Label x:Name="TotalAmountValue" Text="$15" TextColor="Lime" FontSize="20"></Label>
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>
