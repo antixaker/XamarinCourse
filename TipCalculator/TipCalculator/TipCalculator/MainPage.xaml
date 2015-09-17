@@ -11,7 +11,7 @@
                 WinPhone="20, 20, 20, 20" />
   </ContentPage.Padding>
   <ContentPage.Content>
-    <StackLayout>
+    <StackLayout HorizontalOptions="FillAndExpand">
       <Entry HorizontalOptions="Center" WidthRequest="200" BackgroundColor="White" Keyboard="Telephone" Placeholder="Enter amount" TextColor="Black" HeightRequest="30"></Entry>
       <Button></Button>
       <Label x:Name="PercentLabel" Text="Tip Percentage" TextColor="Black" FontSize="20"></Label>
