@@ -7,14 +7,14 @@
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness"
                 iOS="20, 40, 20, 20"
-                Android="20, 40, 20, 40"
+                Android="20, 20, 20, 20"
                 WinPhone="20, 20, 20, 20" />
   </ContentPage.Padding>
   <ContentPage.Content>
     <StackLayout VerticalOptions="FillAndExpand"
                  HorizontalOptions="FillAndExpand"
                  Orientation="Vertical"
-                 Spacing="30">
+                 Spacing="20">
       <Entry></Entry>
       <Button></Button>
       <Grid>
@@ -31,6 +31,9 @@
       <Label Grid.Column="0" Grid.Row="0" x:Name="PercentLabel" Text="Tip Percentage" TextColor="Black" FontSize="20"></Label>
       <Label Grid.Column="0" Grid.Row="1" x:Name="TipAmountLabel" Text="Tip Amount" TextColor="Black" FontSize="20"></Label>
       <Label Grid.Column="0" Grid.Row="2" x:Name="TotalAmountLabel" Text="Total Amount" TextColor="Lime" FontSize="20"></Label>
+      <Label></Label>
+      <Label></Label>
+      <Label></Label>
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>
