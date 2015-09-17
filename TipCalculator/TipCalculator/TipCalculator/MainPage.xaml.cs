@@ -13,6 +13,12 @@ namespace TipCalculator
         public MainPage()
         {
             InitializeComponent();
+            CalcButton.Clicked += CalcButton_Clicked;
+        }
+
+        private void CalcButton_Clicked(object sender, EventArgs e)
+        {
+          
         }
     }
 }
