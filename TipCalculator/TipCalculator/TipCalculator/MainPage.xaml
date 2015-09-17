@@ -11,7 +11,7 @@
                 WinPhone="20, 20, 20, 20" />
   </ContentPage.Padding>
   <ContentPage.Content>
-    <StackLayout HorizontalOptions="FillAndExpand" Spacing="15">
+    <StackLayout HorizontalOptions="FillAndExpand" Spacing="20" Padding="0,10,0,0">
       <Entry x:Name="AmountEntry" HorizontalOptions="Center" WidthRequest="200" BackgroundColor="White" Keyboard="Numeric" Placeholder="Enter amount" TextColor="Black" HeightRequest="30"></Entry>
       <Button x:Name="CalcButton" HorizontalOptions="Center" Text="Calculate Tip" BackgroundColor="Gray" WidthRequest="150"></Button>
       <Grid HorizontalOptions="Center">
@@ -29,8 +29,8 @@
         <Label Grid.Column="0" Grid.Row="1" x:Name="TipAmountLabel" Text="Tip Amount" TextColor="Black" FontSize="20"></Label>
         <Label Grid.Column="0" Grid.Row="2" x:Name="TotalAmountLabel" Text="Total Amount" TextColor="Lime" FontSize="20"></Label>
         <Label Grid.Column="2" Grid.Row="0" x:Name="PercentValue" Text="17%" TextColor="Black" FontSize="20"></Label>
-        <Label Grid.Column="2" Grid.Row="1" x:Name="TipAmountValue" Text="${0}" TextColor="Black" FontSize="20"></Label>
-        <Label Grid.Column="2" Grid.Row="2" x:Name="TotalAmountValue" Text="${0}" TextColor="Lime" FontSize="20"></Label>
+        <Label Grid.Column="2" Grid.Row="1" x:Name="TipAmountValue" Text="$ 0.0" TextColor="Black" FontSize="20"></Label>
+        <Label Grid.Column="2" Grid.Row="2" x:Name="TotalAmountValue" Text="$ 0.0" TextColor="Lime" FontSize="20"></Label>
       </Grid>
     </StackLayout>
   </ContentPage.Content>
