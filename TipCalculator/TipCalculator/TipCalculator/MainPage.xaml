@@ -17,9 +17,9 @@
                  Spacing="15">
       <Entry></Entry>
       <Button></Button>
-      <Label></Label>
-      <Label></Label>
-      <Label></Label>
+      <Label x:Name="PercentLabel" Text="Tip Percentage"></Label>
+      <Label x:Name="TipAmountLabel" Text="Tip Amount"></Label>
+      <Label x:Name="TotalAmountLabel" Text="Total Amount" TextColor="Lime"></Label>
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>
