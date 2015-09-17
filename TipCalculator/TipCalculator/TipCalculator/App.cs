@@ -11,7 +11,7 @@ namespace TipCalculator
     {
         public App()
         {
-            MainPage = new TipCalculator.MainPage();
+            MainPage = new NavigationPage(new TipCalculator.MainPage());
         }
 
         protected override void OnStart()
