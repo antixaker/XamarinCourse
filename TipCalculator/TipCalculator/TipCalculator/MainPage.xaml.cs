@@ -18,7 +18,9 @@ namespace TipCalculator
 
         private void CalcButton_Clicked(object sender, EventArgs e)
         {
-          
+            string enteredAmount = AmountEntry.Text;
+            if (string.IsNullOrEmpty(enteredAmount))
+                this.DisplayAlert("Input error!", "Wrong input string format", "Cancel");
         }
     }
 }
