@@ -32,8 +32,15 @@ namespace TipCalculator
         {
             //cheking input string
             string enteredAmount = AmountEntry.Text;
-            if (string.IsNullOrEmpty(enteredAmount) || !wasChangedText)
+
+            if (!wasChangedText)
                 return;
+            if (string.IsNullOrEmpty(enteredAmount))
+            {
+                ResetLabelsToDefault();
+                wasChangedText = false;
+                return;
+            }
 
             //parsing and calculating
             double amount = 0;
@@ -50,6 +57,12 @@ namespace TipCalculator
 
             //performance optimization
             wasChangedText = false;
+        }
+
+        void ResetLabelsToDefault()
+        {
+            TipAmountValue.Text = "$ 0.0";
+            TotalAmountValue.Text = "$ 0.0";
         }
     }
 }
