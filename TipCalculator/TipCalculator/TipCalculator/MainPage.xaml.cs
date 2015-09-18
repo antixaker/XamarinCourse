@@ -11,6 +11,7 @@ namespace TipCalculator
     public partial class MainPage : ContentPage
     {
         int tipPercentValue = 17;
+        bool wasChangedText;
 
         public MainPage()
         {
@@ -22,13 +23,13 @@ namespace TipCalculator
 
         private void AmountEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            wasChangedText = true;
         }
 
         private void CalcButton_Clicked(object sender, EventArgs e)
         {
             string enteredAmount = AmountEntry.Text;
-            if (string.IsNullOrEmpty(enteredAmount))
+            if (string.IsNullOrEmpty(enteredAmount) || !wasChangedText)
                 return;
 
             double amount = 0;
