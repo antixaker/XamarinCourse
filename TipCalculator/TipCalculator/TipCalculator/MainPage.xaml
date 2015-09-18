@@ -23,7 +23,7 @@
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="3*"></ColumnDefinition>
           <ColumnDefinition Width="*"></ColumnDefinition>
-          <ColumnDefinition Width="*"></ColumnDefinition>
+          <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label Grid.Column="0" Grid.Row="0" Text="Tip Percentage" TextColor="Black" FontSize="20"></Label>
         <Label Grid.Column="0" Grid.Row="1" Text="Tip Amount" TextColor="Black" FontSize="20"></Label>
