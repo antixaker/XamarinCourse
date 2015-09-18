@@ -11,7 +11,7 @@
                 WinPhone="20, 20, 20, 20" />
   </ContentPage.Padding>
   <ContentPage.Content>
-    <StackLayout HorizontalOptions="FillAndExpand" Spacing="20" Padding="0,10,0,0">
+    <StackLayout HorizontalOptions="FillAndExpand" Spacing="25" Padding="0,10,0,0">
       <Entry x:Name="AmountEntry" HorizontalOptions="Center" WidthRequest="200" BackgroundColor="White" Keyboard="Numeric" Placeholder="Enter amount" TextColor="Black" HeightRequest="30"></Entry>
       <Button x:Name="CalcButton" HorizontalOptions="Center" Text="Calculate Tip" BackgroundColor="Gray" WidthRequest="150"></Button>
       <Grid HorizontalOptions="Center">

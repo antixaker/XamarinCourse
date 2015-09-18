@@ -31,8 +31,8 @@ namespace TipCalculator
                 double tipAmount = amount * tipPercentValue / 100;
                 double totalAmount = amount + tipAmount;
 
-                TipAmountValue.Text = string.Format("$ {0}", tipAmount);
-                TotalAmountValue.Text = string.Format("$ {0}", totalAmount);
+                TipAmountValue.Text = string.Format("$ {0:0.00}", tipAmount);
+                TotalAmountValue.Text = string.Format("$ {0:0.00}", totalAmount);
             }
             else
                 this.DisplayAlert("Number value error", "Number value has wrong format", "Back");
