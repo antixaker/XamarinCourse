@@ -16,5 +16,20 @@
       <RowDefinition></RowDefinition>
       <RowDefinition></RowDefinition>
     </Grid.RowDefinitions>
+    <Button x:Name="ButOne"></Button>
+    <Button x:Name="ButTwo"></Button>
+    <Button x:Name="ButThree"></Button>
+    <Button x:Name="ButFour"></Button>
+    <Button x:Name="ButFive"></Button>
+    <Button x:Name="ButSix"></Button>
+    <Button x:Name="ButSeven"></Button>
+    <Button x:Name="ButEight"></Button>
+    <Button x:Name="ButNine"></Button>
+    <Button x:Name="ButZero"></Button>
+    <Button x:Name="ButPoint"></Button>
+    <Button x:Name="ButAdd"></Button>
+    <Button x:Name="ButSubstract"></Button>
+    <Button x:Name="ButMultiply"></Button>
+    <Button x:Name="ButResult"></Button>
   </Grid>
 </ContentPage>
