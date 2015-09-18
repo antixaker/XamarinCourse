@@ -2,9 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Calculator.CalculatorPage">
-  <StackLayout>
-    <Label></Label>
-    <Grid>
+    <Label HeightRequest="50" BackgroundColor="Fuchsia"></Label>
+    <Grid HeightRequest="*">
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*"></ColumnDefinition>
         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -33,5 +32,4 @@
       <Button x:Name="ButMultiply" Grid.Column="3" Grid.Row="0"></Button>
       <Button x:Name="ButResult" Grid.Column="3" Grid.Row="3"></Button>
     </Grid>
-  </StackLayout>
 </ContentPage>
