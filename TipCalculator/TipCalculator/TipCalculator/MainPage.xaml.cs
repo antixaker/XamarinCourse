@@ -16,7 +16,13 @@ namespace TipCalculator
         {
             InitializeComponent();
             CalcButton.Clicked += CalcButton_Clicked;
+            AmountEntry.TextChanged += AmountEntry_TextChanged;
             PercentValue.Text = string.Format("$ {0}", tipPercentValue);
+        }
+
+        private void AmountEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
 
         private void CalcButton_Clicked(object sender, EventArgs e)
