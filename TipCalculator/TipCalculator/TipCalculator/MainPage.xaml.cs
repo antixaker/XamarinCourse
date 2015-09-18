@@ -11,13 +11,15 @@ namespace TipCalculator
     public partial class MainPage : ContentPage
     {
         int tipPercentValue = 17;
-        bool wasChangedText;
+        bool wasChangedText; //for performance optimization
 
         public MainPage()
         {
             InitializeComponent();
+
             CalcButton.Clicked += CalcButton_Clicked;
             AmountEntry.TextChanged += AmountEntry_TextChanged;
+
             PercentValue.Text = string.Format("$ {0}", tipPercentValue);
         }
 
@@ -28,10 +30,12 @@ namespace TipCalculator
 
         private void CalcButton_Clicked(object sender, EventArgs e)
         {
+            //cheking input string
             string enteredAmount = AmountEntry.Text;
             if (string.IsNullOrEmpty(enteredAmount) || !wasChangedText)
                 return;
 
+            //parsing and calculating
             double amount = 0;
             if (double.TryParse(enteredAmount, out amount))
             {
@@ -44,6 +48,7 @@ namespace TipCalculator
             else
                 this.DisplayAlert("Number value error", "Number value has wrong format", "Back");
 
+            //performance optimization
             wasChangedText = false;
         }
     }
