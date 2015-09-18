@@ -43,6 +43,8 @@ namespace TipCalculator
             }
             else
                 this.DisplayAlert("Number value error", "Number value has wrong format", "Back");
+
+            wasChangedText = false;
         }
     }
 }
