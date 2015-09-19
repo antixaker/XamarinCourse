@@ -8,6 +8,10 @@
         <Setter Property="BackgroundColor"  Value="Maroon"/>
         <Setter Property="TextColor" Value="White"/>
       </Style>
+      <Style x:Key="DigitButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Grey"/>
+        <Setter Property="TextColor" Value="Black"/>
+      </Style>
     </ResourceDictionary>
   </ContentPage.Resources>
   <Grid Padding="5,5,5,5">
