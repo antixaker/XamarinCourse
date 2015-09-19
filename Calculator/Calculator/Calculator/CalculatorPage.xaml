@@ -4,13 +4,13 @@
              x:Class="Calculator.CalculatorPage">
   <ContentPage.Resources>
     <ResourceDictionary>
+      <Style TargetType="Button">
+        <Setter Property="BackgroundColor"  Value="Gray"/>
+        <Setter Property="TextColor" Value="Black"/>
+      </Style>
       <Style x:Key="ActionButtonStyle" TargetType="Button">
         <Setter Property="BackgroundColor"  Value="Maroon"/>
         <Setter Property="TextColor" Value="White"/>
-      </Style>
-      <Style x:Key="DigitButtonStyle" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="Grey"/>
-        <Setter Property="TextColor" Value="Black"/>
       </Style>
     </ResourceDictionary>
   </ContentPage.Resources>
