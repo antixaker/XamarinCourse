@@ -37,10 +37,10 @@
     <Button x:Name="ButNine" Grid.Column="2" Grid.Row="2" Text="9"/>
     <Button x:Name="ButZero" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Text="0"/>
     <Button x:Name="ButPoint" Grid.Column="2" Grid.Row="5" Text="."/>
-    <Button x:Name="ButAdd" Grid.Column="1" Grid.Row="1" Text="+"/>
-    <Button x:Name="ButSubstract" Grid.Column="0" Grid.Row="1" Text="-"/>
-    <Button x:Name="ButMultiply" Grid.Column="2" Grid.Row="1" Text="*"/>
-    <Button x:Name="ButDivide" Grid.Column="3" Grid.Row="1" Text="/"/>
+    <Button x:Name="ButAdd" Grid.Column="1" Grid.Row="1" Text="+" Style="{StaticResource ActionButtonStyle}"/>
+    <Button x:Name="ButSubstract" Grid.Column="0" Grid.Row="1" Text="-" Style="{StaticResource ActionButtonStyle}"/>
+    <Button x:Name="ButMultiply" Grid.Column="2" Grid.Row="1" Text="*" Style="{StaticResource ActionButtonStyle}"/>
+    <Button x:Name="ButDivide" Grid.Column="3" Grid.Row="1" Text="/" Style="{StaticResource ActionButtonStyle}"/>
     <Button x:Name="ButReset" Grid.Column="3" Grid.Row="2" Text="C"/>
     <Button x:Name="ButResult" Grid.Column="3" Grid.Row="3" Grid.RowSpan="3" Text="="/>
   </Grid>
