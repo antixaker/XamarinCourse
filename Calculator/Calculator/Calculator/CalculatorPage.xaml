@@ -17,7 +17,7 @@
       <RowDefinition Height="*"></RowDefinition>
       <RowDefinition Height="*"></RowDefinition>
     </Grid.RowDefinitions>
-    <Label x:Name="DigitLabel" Grid.Column="0" Grid.Row="0" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Fuchsia"></Label>
+    <Label x:Name="DigitLabel" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Fuchsia"></Label>
     <Button x:Name="ButOne" Grid.Column="0" Grid.Row="3"></Button>
     <Button x:Name="ButTwo" Grid.Column="1" Grid.Row="3"></Button>
     <Button x:Name="ButThree" Grid.Column="2" Grid.Row="3"></Button>
