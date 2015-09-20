@@ -21,7 +21,7 @@ namespace Calculator
             if (tmp == null)
                 return;
 
-            DigitLabel.Text += tmp.Text;
+            Display.Text += tmp.Text;
         }
     }
 }
