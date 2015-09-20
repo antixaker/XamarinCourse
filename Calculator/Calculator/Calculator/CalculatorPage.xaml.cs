@@ -14,5 +14,14 @@ namespace Calculator
         {
             InitializeComponent();
         }
+
+        void buttonClick(object sender, EventArgs e)
+        {
+            Button tmp = sender as Button;
+            if (tmp == null)
+                return;
+
+            DigitLabel.Text += tmp.Text;
+        }
     }
 }
