@@ -34,7 +34,7 @@ namespace Calculator
 
         void ClearAll(object sender, EventArgs e)
         {
-            Display.Text = "";
+            Display.Text = String.Empty;
         }
     }
 }
