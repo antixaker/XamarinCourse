@@ -23,5 +23,18 @@ namespace Calculator
 
             Display.Text += tmp.Text;
         }
+
+        void RemoveLastSymbol(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Display.Text))
+                return;
+
+            Display.Text = Display.Text.Remove(Display.Text.Length - 1, 1);
+        }
+
+        void ClearAll(object sender, EventArgs e)
+        {
+            Display.Text = "";
+        }
     }
 }

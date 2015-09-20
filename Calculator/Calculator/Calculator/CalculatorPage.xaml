@@ -45,8 +45,8 @@
     <Button x:Name="ButSubstract" Grid.Column="0" Grid.Row="1" Text="-" Style="{StaticResource ActionButtonStyle}" Clicked="buttonClick"/>
     <Button x:Name="ButMultiply" Grid.Column="2" Grid.Row="1" Text="*" Style="{StaticResource ActionButtonStyle}" Clicked="buttonClick"/>
     <Button x:Name="ButDivide" Grid.Column="3" Grid.Row="1" Text="/" Style="{StaticResource ActionButtonStyle}" Clicked="buttonClick"/>
-    <Button x:Name="ButReset" Grid.Column="3" Grid.Row="2" Text="C"/>
+    <Button x:Name="ButReset" Grid.Column="3" Grid.Row="2" Text="C" Clicked="ClearAll"/>
     <Button x:Name="ButResult" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2" Text="="/>
-    <Button x:Name="ButRemoveLastSymbol" Grid.Column="3" Grid.Row="3" Text="←"/>
+    <Button x:Name="ButRemoveLastSymbol" Grid.Column="3" Grid.Row="3" Text="←" Clicked="RemoveLastSymbol"/>
   </Grid>
 </ContentPage>
