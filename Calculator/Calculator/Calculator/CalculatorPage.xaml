@@ -29,8 +29,8 @@
       <RowDefinition Height="*"/>
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
-    <Label x:Name="DigitLabel" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor="Black"/>
-    <Button x:Name="ButOne" Grid.Column="0" Grid.Row="4" Text="1" Clicked="buttonClick"/>
+    <Label x:Name="DigitLabel" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor="Black" FontSize="20"/>
+    <Button x:Name="ButOne" Grid.Column="0" Grid.Row="4" Text="1" Clicked="buttonClick" ClassId="digit"/>
     <Button x:Name="ButTwo" Grid.Column="1" Grid.Row="4" Text="2" Clicked="buttonClick"/>
     <Button x:Name="ButThree" Grid.Column="2" Grid.Row="4" Text="3" Clicked="buttonClick"/>
     <Button x:Name="ButFour" Grid.Column="0" Grid.Row="3" Text="4" Clicked="buttonClick"/>
