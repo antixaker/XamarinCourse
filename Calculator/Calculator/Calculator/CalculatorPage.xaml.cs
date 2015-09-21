@@ -35,6 +35,7 @@ namespace Calculator
             {
                 case "Digit":
                 case "Point":
+                case "Math":
                     ProcessingAction(manager.AddSymbol, tmp.Text);
                     break;
                 default:
@@ -84,6 +85,8 @@ namespace Calculator
         {
             if (value == "." && !CanAddPoint())
                 return;
+            else if (!Char.IsDigit(value[0]) && !CanAddMath())
+                return;
 
             currentDisplayValue += value;
 
@@ -111,7 +114,11 @@ namespace Calculator
             return true;
         }
 
-       
+        bool CanAddMath()
+        {
+            return currentDisplayValue[currentDisplayValue.Length - 1] != '.';
+        }
+
     }
 
 }
