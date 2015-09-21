@@ -30,16 +30,16 @@
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
     <Label x:Name="Display" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor="Black" FontSize="20"/>
-    <Button x:Name="ButOne" Grid.Column="0" Grid.Row="4" Text="1" Clicked="buttonClick" ClassId="digit"/>
-    <Button x:Name="ButTwo" Grid.Column="1" Grid.Row="4" Text="2" Clicked="buttonClick"/>
-    <Button x:Name="ButThree" Grid.Column="2" Grid.Row="4" Text="3" Clicked="buttonClick"/>
-    <Button x:Name="ButFour" Grid.Column="0" Grid.Row="3" Text="4" Clicked="buttonClick"/>
-    <Button x:Name="ButFive" Grid.Column="1" Grid.Row="3" Text="5" Clicked="buttonClick"/>
-    <Button x:Name="ButSix" Grid.Column="2" Grid.Row="3" Text="6" Clicked="buttonClick"/>
-    <Button x:Name="ButSeven" Grid.Column="0" Grid.Row="2" Text="7" Clicked="buttonClick"/>
-    <Button x:Name="ButEight" Grid.Column="1" Grid.Row="2" Text="8" Clicked="buttonClick"/>
-    <Button x:Name="ButNine" Grid.Column="2" Grid.Row="2" Text="9" Clicked="buttonClick"/>
-    <Button x:Name="ButZero" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Text="0" Clicked="buttonClick"/>
+    <Button x:Name="ButOne" Grid.Column="0" Grid.Row="4" Text="1" Clicked="buttonClick" ClassId="Digit"/>
+    <Button x:Name="ButTwo" Grid.Column="1" Grid.Row="4" Text="2" Clicked="buttonClick" ClassId="Digit"/>
+    <Button x:Name="ButThree" Grid.Column="2" Grid.Row="4" Text="3" Clicked="buttonClick" ClassId="Digit"/>
+    <Button x:Name="ButFour" Grid.Column="0" Grid.Row="3" Text="4" Clicked="buttonClick" ClassId="Digit"/>
+    <Button x:Name="ButFive" Grid.Column="1" Grid.Row="3" Text="5" Clicked="buttonClick" ClassId="Digit"/>
+    <Button x:Name="ButSix" Grid.Column="2" Grid.Row="3" Text="6" Clicked="buttonClick" ClassId="Digit"/>
+    <Button x:Name="ButSeven" Grid.Column="0" Grid.Row="2" Text="7" Clicked="buttonClick" ClassId="Digit"/>
+    <Button x:Name="ButEight" Grid.Column="1" Grid.Row="2" Text="8" Clicked="buttonClick" ClassId="Digit"/>
+    <Button x:Name="ButNine" Grid.Column="2" Grid.Row="2" Text="9" Clicked="buttonClick" ClassId="Digit"/>
+    <Button x:Name="ButZero" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Text="0" Clicked="buttonClick" ClassId="Digit"/>
     <Button x:Name="ButPoint" Grid.Column="2" Grid.Row="5" Text="." Clicked="buttonClick"/>
     <Button x:Name="ButAdd" Grid.Column="1" Grid.Row="1" Text="+" Style="{StaticResource ActionButtonStyle}" Clicked="buttonClick"/>
     <Button x:Name="ButSubstract" Grid.Column="0" Grid.Row="1" Text="-" Style="{StaticResource ActionButtonStyle}" Clicked="buttonClick"/>

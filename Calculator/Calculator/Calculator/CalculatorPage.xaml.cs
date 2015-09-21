@@ -28,6 +28,17 @@ namespace Calculator
             Button tmp = sender as Button;
             if (tmp == null)
                 return;
+
+            string buttonClassId = tmp.ClassId;
+
+            switch (buttonClassId)
+            {
+                case "Digit":
+                    ProcessingAction(manager.AddSymbol, tmp.Text);
+                    break;
+                default:
+                    break;
+            }
         }
 
         void ProcessingAction(DisplayProcess process, string value = null)
