@@ -38,6 +38,9 @@ namespace Calculator
                 case "Math":
                     ProcessingAction(manager.AddSymbol, tmp.Text);
                     break;
+                case "Reset":
+                    ProcessingAction(manager.ClearAll);
+                    break;
                 default:
                     break;
             }
