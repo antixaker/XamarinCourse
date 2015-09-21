@@ -34,6 +34,7 @@ namespace Calculator
             switch (buttonClassId)
             {
                 case "Digit":
+                case "Point":
                     ProcessingAction(manager.AddSymbol, tmp.Text);
                     break;
                 default:
@@ -67,6 +68,8 @@ namespace Calculator
     class CalculatorManager
     {
         string currentDisplayValue;
+        string lastSymbol;
+
         public string CurrentDisplayValue
         {
             get { return currentDisplayValue; }
@@ -79,7 +82,12 @@ namespace Calculator
 
         public void AddSymbol(string value)
         {
+            if (value == "." && !CanAddPoint())
+                return;
+
             currentDisplayValue += value;
+
+            lastSymbol = value;
         }
 
         public void RemoveLastSymbol(string value = null)
@@ -91,6 +99,19 @@ namespace Calculator
         {
             currentDisplayValue = String.Empty;
         }
+
+        bool CanAddPoint()
+        {
+            string[] arr = currentDisplayValue.Split(new[] { '+', '-', '*', '/' });
+
+            string last = arr[arr.Length - 1];
+            if (last.Contains("."))
+                return false;
+
+            return true;
+        }
+
+       
     }
 
 }

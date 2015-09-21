@@ -40,7 +40,7 @@
     <Button x:Name="ButEight" Grid.Column="1" Grid.Row="2" Text="8" Clicked="buttonClick" ClassId="Digit"/>
     <Button x:Name="ButNine" Grid.Column="2" Grid.Row="2" Text="9" Clicked="buttonClick" ClassId="Digit"/>
     <Button x:Name="ButZero" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Text="0" Clicked="buttonClick" ClassId="Digit"/>
-    <Button x:Name="ButPoint" Grid.Column="2" Grid.Row="5" Text="." Clicked="buttonClick"/>
+    <Button x:Name="ButPoint" Grid.Column="2" Grid.Row="5" Text="." Clicked="buttonClick" ClassId="Point"/>
     <Button x:Name="ButAdd" Grid.Column="1" Grid.Row="1" Text="+" Style="{StaticResource ActionButtonStyle}" Clicked="buttonClick"/>
     <Button x:Name="ButSubstract" Grid.Column="0" Grid.Row="1" Text="-" Style="{StaticResource ActionButtonStyle}" Clicked="buttonClick"/>
     <Button x:Name="ButMultiply" Grid.Column="2" Grid.Row="1" Text="*" Style="{StaticResource ActionButtonStyle}" Clicked="buttonClick"/>
