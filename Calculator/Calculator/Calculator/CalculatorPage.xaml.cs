@@ -108,7 +108,7 @@ namespace Calculator
 
         bool CanAddPoint()
         {
-            if (!Char.IsDigit(lastSymbol[0]))
+            if (string.IsNullOrEmpty(lastSymbol) || !Char.IsDigit(lastSymbol[0]))
                 return false;
 
             string[] arr = currentDisplayValue.Split(new[] { '+', '-', '*', '/' });
@@ -122,7 +122,7 @@ namespace Calculator
 
         bool CanAddMath()
         {
-            return (Char.IsDigit(lastSymbol[0]) && currentDisplayValue[currentDisplayValue.Length - 1] != '.');
+            return (!string.IsNullOrEmpty(lastSymbol) && Char.IsDigit(lastSymbol[0]) && currentDisplayValue[currentDisplayValue.Length - 1] != '.');
         }
 
     }
