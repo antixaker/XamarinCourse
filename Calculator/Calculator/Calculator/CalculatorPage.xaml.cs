@@ -29,6 +29,21 @@ namespace Calculator
             if (tmp == null)
                 return;
         }
+
+        #region Synchronization methods
+
+        void CreateDisplaySnapshot()
+        {
+            manager?.CopyDisplayValue(Display.Text);
+        }
+
+        void SynchronizeDisplay()
+        {
+            Display.Text = manager?.CurrentDisplayValue;
+        }
+
+        #endregion
+
     }
 
     class CalculatorManager
