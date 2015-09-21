@@ -105,6 +105,9 @@ namespace Calculator
 
         bool CanAddPoint()
         {
+            if (!Char.IsDigit(lastSymbol[0]))
+                return false;
+
             string[] arr = currentDisplayValue.Split(new[] { '+', '-', '*', '/' });
 
             string last = arr[arr.Length - 1];
