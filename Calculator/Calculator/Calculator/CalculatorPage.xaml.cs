@@ -8,11 +8,19 @@ using Xamarin.Forms;
 
 namespace Calculator
 {
+
+    delegate void DisplayProcess(string value);
+
     public partial class CalculatorPage : ContentPage
     {
+
+        CalculatorManager manager;
+
         public CalculatorPage()
         {
             InitializeComponent();
+
+            manager = new CalculatorManager();
         }
 
         void buttonClick(object sender, EventArgs e)
@@ -20,21 +28,36 @@ namespace Calculator
             Button tmp = sender as Button;
             if (tmp == null)
                 return;
-
-            Display.Text += tmp.Text;
-        }
-
-        void RemoveLastSymbol(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(Display.Text))
-                return;
-
-            Display.Text = Display.Text.Remove(Display.Text.Length - 1, 1);
-        }
-
-        void ClearAll(object sender, EventArgs e)
-        {
-            Display.Text = String.Empty;
         }
     }
+
+    class CalculatorManager
+    {
+        string currentDisplayValue;
+        public string CurrentDisplayValue
+        {
+            get { return currentDisplayValue; }
+        }
+
+        public void CopyDisplayValue(string value)
+        {
+            currentDisplayValue = value;
+        }
+
+        public void AddSymbol(string value)
+        {
+            currentDisplayValue += value;
+        }
+
+        public void RemoveLastSymbol(string value = null)
+        {
+            currentDisplayValue = currentDisplayValue.Remove(currentDisplayValue.Length - 1, 1);
+        }
+
+        public void ClearAll(string value = null)
+        {
+            currentDisplayValue = String.Empty;
+        }
+    }
+
 }
