@@ -119,7 +119,7 @@ namespace Calculator
 
         bool CanAddMath()
         {
-            return currentDisplayValue[currentDisplayValue.Length - 1] != '.';
+            return (Char.IsDigit(lastSymbol[0]) && currentDisplayValue[currentDisplayValue.Length - 1] != '.');
         }
 
     }
