@@ -30,6 +30,13 @@ namespace Calculator
                 return;
         }
 
+        void ProcessingAction(DisplayProcess process, string value = null)
+        {
+            CreateDisplaySnapshot();
+            process?.Invoke(value);
+            SynchronizeDisplay();
+        }
+
         #region Synchronization methods
 
         void CreateDisplaySnapshot()
