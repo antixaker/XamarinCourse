@@ -53,7 +53,7 @@ namespace Calculator
 
     }
 
-    class InputManager
+    class InputManager : IInputManager
     {
         readonly char[] actionSymbols = { '+', '-', '/', '*' };
 
@@ -82,10 +82,6 @@ namespace Calculator
             return valueToChange += symbolToAdd;
         }
 
-        string ReplaceLastSymbol(string valueToChange, string symbolToReplace)
-        {
-            return valueToChange.Substring(0, valueToChange.Length - 1) + symbolToReplace;
-        }
 
         public string RemoveLastSymbol(string value)
         {
@@ -99,9 +95,14 @@ namespace Calculator
 
         #region Servise methods
 
+        string ReplaceLastSymbol(string valueToChange, string symbolToReplace)
+        {
+            return valueToChange.Substring(0, valueToChange.Length - 1) + symbolToReplace;
+        }
+
         bool CommandIsFull(string valueToTest)
         {
-            if (valueToTest.Split(actionSymbols,StringSplitOptions.RemoveEmptyEntries).Length == 2)
+            if (valueToTest.Split(actionSymbols, StringSplitOptions.RemoveEmptyEntries).Length == 2)
                 return true;
             else
                 return false;
