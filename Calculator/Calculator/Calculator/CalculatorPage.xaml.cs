@@ -66,7 +66,7 @@ namespace Calculator
             char lastSymbol = GetLastSymbol(valueToChange);
 
             if (symbolToAdd == "." && !CanAddPoint(valueToChange, lastSymbol))
-                return string.Empty;
+                return valueToChange;
             else if (!Char.IsDigit(symbolToAdd[0]) && !CanAddMath(valueToChange, lastSymbol))
                 return ReplaceLastSymbol(valueToChange, symbolToAdd);
 
