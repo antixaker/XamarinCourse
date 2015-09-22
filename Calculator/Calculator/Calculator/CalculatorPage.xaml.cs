@@ -52,16 +52,30 @@ namespace Calculator
 
     class CalculatorManager
     {
-        public string AddSymbol(string displayValue, string symbolToAdd)
+        public string AddSymbol(string valueToChange, string symbolToAdd)
         {
-            char lastSymbol = GetLastSymbol(displayValue);
+            //for first button press
+            if (string.IsNullOrEmpty(valueToChange))
+            {
+                if (char.IsDigit(symbolToAdd[0]))
+                    return symbolToAdd;
+                else
+                    return string.Empty;
+            }
 
-            if (symbolToAdd == "." && !CanAddPoint(displayValue, lastSymbol))
-                return string.Empty;
-            else if (!Char.IsDigit(symbolToAdd[0]) && !CanAddMath(displayValue, lastSymbol))
-                return string.Empty;
+            char lastSymbol = GetLastSymbol(valueToChange);
 
-            return displayValue += symbolToAdd;
+            if (symbolToAdd == "." && !CanAddPoint(valueToChange, lastSymbol))
+                return string.Empty;
+            else if (!Char.IsDigit(symbolToAdd[0]) && !CanAddMath(valueToChange, lastSymbol))
+                return ReplaceLastSymbol(valueToChange, symbolToAdd);
+
+            return valueToChange += symbolToAdd;
+        }
+
+        string ReplaceLastSymbol(string valueToChange, string symbolToReplace)
+        {
+            return valueToChange.Replace(valueToChange[valueToChange.Length - 1], symbolToReplace[0]);
         }
 
         public string RemoveLastSymbol(string value)
@@ -73,6 +87,8 @@ namespace Calculator
         {
             return String.Empty;
         }
+
+        #region Servise methods
 
         bool CanAddPoint(string currentDisplayValue, char lastSymbol)
         {
@@ -97,6 +113,8 @@ namespace Calculator
         {
             return value[value.Length - 1];
         }
+
+        #endregion
 
     }
 
