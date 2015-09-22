@@ -81,7 +81,7 @@ namespace Calculator
 
         string ReplaceLastSymbol(string valueToChange, string symbolToReplace)
         {
-            return valueToChange.Replace(valueToChange[valueToChange.Length - 1], symbolToReplace[0]);
+            return valueToChange.Substring(0, valueToChange.Length - 1) + symbolToReplace;
         }
 
         public string RemoveLastSymbol(string value)
