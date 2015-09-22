@@ -9,8 +9,6 @@ using Xamarin.Forms;
 namespace Calculator
 {
 
-    delegate void DisplayProcess(string value);
-
     public partial class CalculatorPage : ContentPage
     {
 
@@ -31,84 +29,54 @@ namespace Calculator
 
             string buttonClassId = tmp.ClassId;
 
+            string resultString = string.Empty;
+
             switch (buttonClassId)
             {
                 case "Digit":
                 case "Point":
                 case "Math":
-                    ProcessingAction(manager.AddSymbol, tmp.Text);
+                    resultString = manager.AddSymbol(Display.Text, tmp.Text);
                     break;
                 case "Reset":
-                    ProcessingAction(manager.ClearAll);
+                    resultString = manager.ClearAll();
                     break;
                 default:
                     break;
             }
+
+            Display.Text = resultString;
         }
-
-        void ProcessingAction(DisplayProcess process, string value = null)
-        {
-            CreateDisplaySnapshot();
-            process?.Invoke(value);
-            SynchronizeDisplay();
-        }
-
-        #region Synchronization methods
-
-        void CreateDisplaySnapshot()
-        {
-            manager?.CopyDisplayValue(Display.Text);
-        }
-
-        void SynchronizeDisplay()
-        {
-            Display.Text = manager?.CurrentDisplayValue;
-        }
-
-        #endregion
 
     }
 
     class CalculatorManager
     {
-        string currentDisplayValue;
-        string lastSymbol;
-
-        public string CurrentDisplayValue
+        public string AddSymbol(string displayValue, string symbolToAdd)
         {
-            get { return currentDisplayValue; }
+            char lastSymbol = GetLastSymbol(displayValue);
+
+            if (symbolToAdd == "." && !CanAddPoint(displayValue, lastSymbol))
+                return string.Empty;
+            else if (!Char.IsDigit(symbolToAdd[0]) && !CanAddMath(displayValue, lastSymbol))
+                return string.Empty;
+
+            return displayValue += symbolToAdd;
         }
 
-        public void CopyDisplayValue(string value)
+        public string RemoveLastSymbol(string value)
         {
-            currentDisplayValue = value;
+            return value.Remove(value.Length - 1, 1);
         }
 
-        public void AddSymbol(string value)
+        public string ClearAll()
         {
-            if (value == "." && !CanAddPoint())
-                return;
-            else if (!Char.IsDigit(value[0]) && !CanAddMath())
-                return;
-
-            currentDisplayValue += value;
-
-            lastSymbol = value;
+            return String.Empty;
         }
 
-        public void RemoveLastSymbol(string value = null)
+        bool CanAddPoint(string currentDisplayValue, char lastSymbol)
         {
-            currentDisplayValue = currentDisplayValue.Remove(currentDisplayValue.Length - 1, 1);
-        }
-
-        public void ClearAll(string value = null)
-        {
-            currentDisplayValue = String.Empty;
-        }
-
-        bool CanAddPoint()
-        {
-            if (string.IsNullOrEmpty(lastSymbol) || !Char.IsDigit(lastSymbol[0]))
+            if (string.IsNullOrEmpty(lastSymbol.ToString()) || !Char.IsDigit(lastSymbol))
                 return false;
 
             string[] arr = currentDisplayValue.Split(new[] { '+', '-', '*', '/' });
@@ -120,9 +88,14 @@ namespace Calculator
             return true;
         }
 
-        bool CanAddMath()
+        bool CanAddMath(string currentDisplayValue, char lastSymbol)
         {
-            return (!string.IsNullOrEmpty(lastSymbol) && Char.IsDigit(lastSymbol[0]) && currentDisplayValue[currentDisplayValue.Length - 1] != '.');
+            return (!string.IsNullOrEmpty(lastSymbol.ToString()) && Char.IsDigit(lastSymbol) && currentDisplayValue[currentDisplayValue.Length - 1] != '.');
+        }
+
+        char GetLastSymbol(string value)
+        {
+            return value[value.Length - 1];
         }
 
     }
