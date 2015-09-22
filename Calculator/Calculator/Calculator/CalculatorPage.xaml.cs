@@ -89,7 +89,7 @@ namespace Calculator
 
         public string RemoveLastSymbol(string value)
         {
-            return value.Remove(value.Length - 1, 1);
+            return string.IsNullOrEmpty(value) ? value : value.Remove(value.Length - 1, 1);
         }
 
         public string ClearAll()
@@ -101,7 +101,7 @@ namespace Calculator
 
         bool CommandIsFull(string valueToTest)
         {
-            if (valueToTest.Split(actionSymbols).Length == 2)
+            if (valueToTest.Split(actionSymbols,StringSplitOptions.RemoveEmptyEntries).Length == 2)
                 return true;
             else
                 return false;
