@@ -52,6 +52,8 @@ namespace Calculator
 
     class CalculatorManager
     {
+        readonly char[] actionSymbols = { '+', '-', '/', '*' };
+
         public string AddSymbol(string valueToChange, string symbolToAdd)
         {
             //for first button press
@@ -62,6 +64,10 @@ namespace Calculator
                 else
                     return string.Empty;
             }
+
+            //constraint for input only two numbers and action symbol
+            if (!char.IsDigit(symbolToAdd[0]) && symbolToAdd != "." && CommandIsFull(valueToChange))
+                return valueToChange;
 
             char lastSymbol = GetLastSymbol(valueToChange);
 
@@ -90,12 +96,20 @@ namespace Calculator
 
         #region Servise methods
 
+        bool CommandIsFull(string valueToTest)
+        {
+            if (valueToTest.Split(actionSymbols).Length == 2)
+                return true;
+            else
+                return false;
+        }
+
         bool CanAddPoint(string currentDisplayValue, char lastSymbol)
         {
             if (string.IsNullOrEmpty(lastSymbol.ToString()) || !Char.IsDigit(lastSymbol))
                 return false;
 
-            string[] arr = currentDisplayValue.Split(new[] { '+', '-', '*', '/' });
+            string[] arr = StringSplit(currentDisplayValue, actionSymbols);
 
             string last = arr[arr.Length - 1];
             if (last.Contains("."))
@@ -112,6 +126,11 @@ namespace Calculator
         char GetLastSymbol(string value)
         {
             return value[value.Length - 1];
+        }
+
+        string[] StringSplit(string stringToSplit, char[] separatorArray)
+        {
+            return stringToSplit.Split(separatorArray);
         }
 
         #endregion
