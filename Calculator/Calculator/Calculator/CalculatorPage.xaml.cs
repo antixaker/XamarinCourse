@@ -41,6 +41,9 @@ namespace Calculator
                 case "Reset":
                     resultString = manager.ClearAll();
                     break;
+                case "Remove":
+                    resultString = manager.RemoveLastSymbol(Display.Text);
+                    break;
                 default:
                     break;
             }
