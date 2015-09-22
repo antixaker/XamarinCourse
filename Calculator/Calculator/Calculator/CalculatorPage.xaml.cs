@@ -12,13 +12,13 @@ namespace Calculator
     public partial class CalculatorPage : ContentPage
     {
 
-        CalculatorManager manager;
+        InputManager displayManager;
 
         public CalculatorPage()
         {
             InitializeComponent();
 
-            manager = new CalculatorManager();
+            displayManager = new InputManager();
         }
 
         void buttonClick(object sender, EventArgs e)
@@ -36,13 +36,13 @@ namespace Calculator
                 case "Digit":
                 case "Point":
                 case "Math":
-                    resultString = manager.AddSymbol(Display.Text, tmp.Text);
+                    resultString = displayManager.AddSymbol(Display.Text, tmp.Text);
                     break;
                 case "Reset":
-                    resultString = manager.ClearAll();
+                    resultString = displayManager.ClearAll();
                     break;
                 case "Remove":
-                    resultString = manager.RemoveLastSymbol(Display.Text);
+                    resultString = displayManager.RemoveLastSymbol(Display.Text);
                     break;
                 default:
                     break;
@@ -53,7 +53,7 @@ namespace Calculator
 
     }
 
-    class CalculatorManager
+    class InputManager
     {
         readonly char[] actionSymbols = { '+', '-', '/', '*' };
 
