@@ -12,7 +12,7 @@ namespace Calculator
     public partial class CalculatorPage : ContentPage
     {
 
-        InputManager displayManager;
+        IInputManager displayManager;
 
         public CalculatorPage()
         {
