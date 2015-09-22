@@ -141,4 +141,44 @@ namespace Calculator
 
     }
 
+    class CaclProcessor
+    {
+        public double? Calculate(string command)
+        {
+            char[] operators = new[] { '+', '-', '/', '*' };
+            string[] array = command.Split(operators, StringSplitOptions.RemoveEmptyEntries);
+
+            double firstNumber = 0;
+            double secondNumber = 0;
+
+            if (array.Length != 2 || !double.TryParse(array[0], out firstNumber) || !double.TryParse(array[1], out secondNumber))
+                return null;
+
+            char mathOperator = ' ';
+            int a = command.IndexOfAny(operators);
+            if (a == -1)
+                return null;
+            else
+                mathOperator = command[a];
+
+            double result = 0;
+            switch (mathOperator)
+            {
+                case '+':
+                    result = firstNumber + secondNumber;
+                    break;
+                case '-':
+                    result = firstNumber - secondNumber;
+                    break;
+                case '*':
+                    result = firstNumber * secondNumber;
+                    break;
+                case '/':
+                    result = firstNumber / secondNumber;
+                    break;
+            }
+            return result;
+        }
+    }
+
 }
