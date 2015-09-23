@@ -41,6 +41,17 @@ namespace Calculator
             Display.Text = displayManager.ClearAll();
         }
 
+        
+        void OnResultClicked(object sender, EventArgs e)
+        {
+            Button tmp = sender as Button;
+            if (tmp == null)
+                return;
+
+            var res = mathProcessor.Calculate(Display.Text);
+            Display.Text = res?.ToString();
+        }
+
         void buttonClick(object sender, EventArgs e)
         {
             Button tmp = sender as Button;
@@ -55,10 +66,6 @@ namespace Calculator
             {
                 case "Remove":
                     resultString = displayManager.RemoveLastSymbol(Display.Text);
-                    break;
-                case "Result":
-                    var res = mathProcessor.Calculate(Display.Text);
-                    resultString = res?.ToString();
                     break;
                 default:
                     break;
