@@ -36,13 +36,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="CaclProcessor.cs" />
+    <Compile Include="CaclProcessor\CaclProcessor.cs" />
     <Compile Include="CalculatorPage.xaml.cs">
       <DependentUpon>CalculatorPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ICaclProcessor.cs" />
-    <Compile Include="IInputManager.cs" />
-    <Compile Include="InputManager.cs" />
+    <Compile Include="CaclProcessor\ICaclProcessor.cs" />
+    <Compile Include="InputManager\IInputManager.cs" />
+    <Compile Include="InputManager\InputManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
