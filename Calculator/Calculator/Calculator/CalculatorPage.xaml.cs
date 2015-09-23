@@ -13,14 +13,14 @@ namespace Calculator
     {
 
         IInputManager displayManager;
-        ICaclProcessor processor;
+        ICaclProcessor mathProcessor;
 
         public CalculatorPage()
         {
             InitializeComponent();
 
             displayManager = new InputManager();
-            processor = new CaclProcessor();
+            mathProcessor = new CaclProcessor();
         }
 
         void buttonClick(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace Calculator
                     resultString = displayManager.RemoveLastSymbol(Display.Text);
                     break;
                 case "Result":
-                    var res = processor.Calculate(Display.Text);
+                    var res = mathProcessor.Calculate(Display.Text);
                     resultString = res?.ToString();
                     break;
                 default:
@@ -79,6 +79,10 @@ namespace Calculator
                 return valueToChange;
 
             char lastSymbol = GetLastSymbol(valueToChange);
+
+            //handler input zero after math operator
+            if (symbolToAdd == "0" && actionSymbols.Contains(lastSymbol))
+                return valueToChange;
 
             //check point enter
             if (symbolToAdd == "." && !CanAddPoint(valueToChange, lastSymbol))
