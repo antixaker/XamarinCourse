@@ -46,7 +46,7 @@
     <Button x:Name="ButMultiply" Grid.Column="2" Grid.Row="1" Text="*" Style="{StaticResource ActionButtonStyle}" Clicked="buttonClick" ClassId="Math"/>
     <Button x:Name="ButDivide" Grid.Column="3" Grid.Row="1" Text="/" Style="{StaticResource ActionButtonStyle}" Clicked="buttonClick" ClassId="Math"/>
     <Button x:Name="ButReset" Grid.Column="3" Grid.Row="2" Text="C" Clicked="buttonClick" ClassId="Reset"/>
-    <Button x:Name="ButResult" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2" Text="="/>
+    <Button x:Name="ButResult" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2" Text="=" Clicked="buttonClick" ClassId="Result"/>
     <Button x:Name="ButRemoveLastSymbol" Grid.Column="3" Grid.Row="3" Text="←" Clicked="buttonClick" ClassId="Remove"/>
   </Grid>
 </ContentPage>

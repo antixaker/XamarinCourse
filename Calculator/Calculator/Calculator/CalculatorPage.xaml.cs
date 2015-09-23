@@ -13,12 +13,14 @@ namespace Calculator
     {
 
         IInputManager displayManager;
+        ICaclProcessor processor;
 
         public CalculatorPage()
         {
             InitializeComponent();
 
             displayManager = new InputManager();
+            processor = new CaclProcessor();
         }
 
         void buttonClick(object sender, EventArgs e)
@@ -43,6 +45,10 @@ namespace Calculator
                     break;
                 case "Remove":
                     resultString = displayManager.RemoveLastSymbol(Display.Text);
+                    break;
+                case "Result":
+                    var res = processor.Calculate(Display.Text);
+                    resultString = res?.ToString();
                     break;
                 default:
                     break;
@@ -74,14 +80,16 @@ namespace Calculator
 
             char lastSymbol = GetLastSymbol(valueToChange);
 
+            //check point enter
             if (symbolToAdd == "." && !CanAddPoint(valueToChange, lastSymbol))
                 return valueToChange;
+
+            //check re-enter mathoperator
             else if (!Char.IsDigit(symbolToAdd[0]) && !CanAddMath(valueToChange, lastSymbol))
                 return ReplaceLastSymbol(valueToChange, symbolToAdd);
 
             return valueToChange += symbolToAdd;
         }
-
 
         public string RemoveLastSymbol(string value)
         {
@@ -141,44 +149,64 @@ namespace Calculator
 
     }
 
-    class CaclProcessor
+    class CaclProcessor : ICaclProcessor
     {
         public double? Calculate(string command)
         {
-            char[] operators = new[] { '+', '-', '/', '*' };
-            string[] array = command.Split(operators, StringSplitOptions.RemoveEmptyEntries);
+            if (string.IsNullOrEmpty(command))
+                return null;
 
+            char[] operators = new[] { '+', '-', '/', '*' };
             double firstNumber = 0;
             double secondNumber = 0;
+            char mathOperator = ' ';
+            bool isNegative = false;
 
+
+            //if first number is negative after previous operation
+            if (command[0] == '-')
+            {
+                command = command.Substring(1, command.Length - 1);
+                isNegative = true;
+            }
+
+
+            string[] array = command.Split(operators, StringSplitOptions.RemoveEmptyEntries);
+
+            //if some errors is return null
             if (array.Length != 2 || !double.TryParse(array[0], out firstNumber) || !double.TryParse(array[1], out secondNumber))
                 return null;
 
-            char mathOperator = ' ';
-            int a = command.IndexOfAny(operators);
-            if (a == -1)
-                return null;
-            else
-                mathOperator = command[a];
+            //get mathoperator symbol from command
+            mathOperator = command[command.IndexOfAny(operators)];
 
-            double result = 0;
+            if (isNegative)
+                firstNumber *= -1;
+
+            return DoMathOperation(firstNumber, secondNumber, mathOperator);
+        }
+
+        double DoMathOperation(double var1, double var2, char mathOperator)
+        {
+            double result = double.NaN;
             switch (mathOperator)
             {
                 case '+':
-                    result = firstNumber + secondNumber;
+                    result = var1 + var2;
                     break;
                 case '-':
-                    result = firstNumber - secondNumber;
+                    result = var1 - var2;
                     break;
                 case '*':
-                    result = firstNumber * secondNumber;
+                    result = var1 * var2;
                     break;
                 case '/':
-                    result = firstNumber / secondNumber;
+                    result = var1 / var2;
                     break;
             }
             return result;
         }
+
     }
 
 }

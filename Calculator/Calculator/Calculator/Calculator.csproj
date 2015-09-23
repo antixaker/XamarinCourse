@@ -39,6 +39,7 @@
     <Compile Include="CalculatorPage.xaml.cs">
       <DependentUpon>CalculatorPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ICaclProcessor.cs" />
     <Compile Include="IInputManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
