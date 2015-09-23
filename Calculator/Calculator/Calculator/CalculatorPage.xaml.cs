@@ -7,9 +7,11 @@ namespace Calculator
     {
         IInputManager displayManager;
         ICaclProcessor mathProcessor;
+
         public CalculatorPage()
         {
             InitializeComponent();
+
             displayManager = new InputManager();
             mathProcessor = new CaclProcessor();
         }
@@ -19,6 +21,7 @@ namespace Calculator
             Button tmp = sender as Button;
             if (tmp == null)
                 return;
+
             Display.Text = displayManager.AddSymbol(Display.Text, tmp.Text);
         }
 
@@ -27,6 +30,7 @@ namespace Calculator
             Button tmp = sender as Button;
             if (tmp == null)
                 return;
+
             Display.Text = displayManager.ClearAll();
         }
 
@@ -35,6 +39,7 @@ namespace Calculator
             Button tmp = sender as Button;
             if (tmp == null)
                 return;
+
             var res = mathProcessor.Calculate(Display.Text);
             if (res != null)
                 Display.Text = res.ToString();
@@ -45,6 +50,7 @@ namespace Calculator
             Button tmp = sender as Button;
             if (tmp == null)
                 return;
+
             Display.Text = displayManager.RemoveLastSymbol(Display.Text);
         }
     }
