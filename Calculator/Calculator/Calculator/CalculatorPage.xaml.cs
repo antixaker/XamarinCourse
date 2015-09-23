@@ -32,6 +32,15 @@ namespace Calculator
             Display.Text = displayManager.AddSymbol(Display.Text, tmp.Text);
         }
 
+        void OnResetClicked(object sender, EventArgs e)
+        {
+            Button tmp = sender as Button;
+            if (tmp == null)
+                return;
+
+            Display.Text = displayManager.ClearAll();
+        }
+
         void buttonClick(object sender, EventArgs e)
         {
             Button tmp = sender as Button;
@@ -44,9 +53,6 @@ namespace Calculator
 
             switch (buttonClassId)
             {
-                case "Reset":
-                    resultString = displayManager.ClearAll();
-                    break;
                 case "Remove":
                     resultString = displayManager.RemoveLastSymbol(Display.Text);
                     break;
