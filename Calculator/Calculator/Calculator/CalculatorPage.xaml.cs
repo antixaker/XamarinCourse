@@ -41,7 +41,7 @@ namespace Calculator
             Display.Text = displayManager.ClearAll();
         }
 
-        
+
         void OnResultClicked(object sender, EventArgs e)
         {
             Button tmp = sender as Button;
@@ -49,32 +49,18 @@ namespace Calculator
                 return;
 
             var res = mathProcessor.Calculate(Display.Text);
-            Display.Text = res?.ToString();
+            if (res != null)
+                Display.Text = res.ToString();
         }
 
-        void buttonClick(object sender, EventArgs e)
+        void OnRemoveLastSymbolClicked(object sender, EventArgs e)
         {
             Button tmp = sender as Button;
             if (tmp == null)
                 return;
 
-            string buttonClassId = tmp.ClassId;
-
-            string resultString = string.Empty;
-
-            switch (buttonClassId)
-            {
-                case "Remove":
-                    resultString = displayManager.RemoveLastSymbol(Display.Text);
-                    break;
-                default:
-                    break;
-            }
-
-            if (resultString != null)
-                Display.Text = resultString;
+            Display.Text = displayManager.RemoveLastSymbol(Display.Text);
         }
-
     }
 
     class InputManager : IInputManager

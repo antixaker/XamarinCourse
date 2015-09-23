@@ -52,6 +52,6 @@
     <Button x:Name="ButDivide" Grid.Column="3" Grid.Row="1" Text="/" Style="{StaticResource ActionButtonStyle}" Clicked="OnButtonClicked"/>
     <Button x:Name="ButReset" Grid.Column="3" Grid.Row="2" Text="C" Style="{StaticResource ServiceButtonStyle}" Clicked="OnResetClicked"/>
     <Button x:Name="ButResult" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2" Text="=" Style="{StaticResource ServiceButtonStyle}" Clicked="OnResultClicked"/>
-    <Button x:Name="ButRemoveLastSymbol" Grid.Column="3" Grid.Row="3" Text="←" Style="{StaticResource ServiceButtonStyle}" Clicked="buttonClick" ClassId="Remove"/>
+    <Button x:Name="ButRemoveLastSymbol" Grid.Column="3" Grid.Row="3" Text="←" Style="{StaticResource ServiceButtonStyle}" Clicked="OnRemoveLastSymbolClicked"/>
   </Grid>
 </ContentPage>
