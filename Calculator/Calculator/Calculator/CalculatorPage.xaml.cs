@@ -54,7 +54,8 @@ namespace Calculator
                     break;
             }
 
-            Display.Text = resultString;
+            if (resultString != null)
+                Display.Text = resultString;
         }
 
     }
@@ -79,10 +80,6 @@ namespace Calculator
                 return valueToChange;
 
             char lastSymbol = GetLastSymbol(valueToChange);
-
-            //handler input zero after math operator
-            if (symbolToAdd == "0" && actionSymbols.Contains(lastSymbol))
-                return valueToChange;
 
             //check point enter
             if (symbolToAdd == "." && !CanAddPoint(valueToChange, lastSymbol))
