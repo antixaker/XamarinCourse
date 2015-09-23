@@ -23,6 +23,15 @@ namespace Calculator
             mathProcessor = new CaclProcessor();
         }
 
+        void OnButtonClicked(object sender, EventArgs e)
+        {
+            Button tmp = sender as Button;
+            if (tmp == null)
+                return;
+
+            Display.Text = displayManager.AddSymbol(Display.Text, tmp.Text);
+        }
+
         void buttonClick(object sender, EventArgs e)
         {
             Button tmp = sender as Button;
@@ -35,11 +44,6 @@ namespace Calculator
 
             switch (buttonClassId)
             {
-                case "Digit":
-                case "Point":
-                case "Math":
-                    resultString = displayManager.AddSymbol(Display.Text, tmp.Text);
-                    break;
                 case "Reset":
                     resultString = displayManager.ClearAll();
                     break;
